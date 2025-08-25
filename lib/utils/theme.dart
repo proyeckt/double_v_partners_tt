@@ -7,6 +7,9 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: colorScheme,
       fontFamily: 'Segoe',
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: AppColors.primaryColor,
+      ),
     );
   }
 

@@ -1,5 +1,6 @@
 import 'package:double_v_partners_tt/utils/colors.dart';
 import 'package:double_v_partners_tt/utils/routes.dart';
+import 'package:double_v_partners_tt/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,10 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Double V Partners Test',
-      theme: ThemeData(
-        primaryColor: AppColors.primaryColor,
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       routerConfig: router,
     );

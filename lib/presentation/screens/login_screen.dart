@@ -76,53 +76,55 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildForm(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          SafeArea(child: Container(height: 250.0)),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 40.0),
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            width: size.width * 0.85,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
-              boxShadow: const <BoxShadow>[
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 3,
-                  offset: Offset(0.0, 0.05), //dx,dy
-                  spreadRadius: 3.0,
-                ),
-              ],
-            ),
-            child: Form(
-              key: _formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: <Widget>[
-                    Text('Sign In', style: Styles.headlineBlackStyle),
-                    SizedBox(height: 20),
-                    _buildEmailField(),
-                    SizedBox(height: 10),
-                    _buildPasswordField(),
-                    SizedBox(height: 20),
-                    _buildButton(),
-                  ],
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SafeArea(child: Container(height: 250.0)),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 40.0),
+              margin: EdgeInsets.only(top: 10, bottom: 10),
+              width: size.width * 0.85,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: const <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 3,
+                    offset: Offset(0.0, 0.05), //dx,dy
+                    spreadRadius: 3.0,
+                  ),
+                ],
+              ),
+              child: Form(
+                key: _formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text('Sign In', style: Styles.headlineBlackStyle),
+                      SizedBox(height: 20),
+                      _buildEmailField(),
+                      SizedBox(height: 10),
+                      _buildPasswordField(),
+                      SizedBox(height: 20),
+                      _buildButton(),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          TextButton(
-            child: Text(
-              '¿Nuevo usuario? Registrate',
-              style: Styles.secondarySubtitleBold,
+            TextButton(
+              child: Text(
+                "Don't have an account? Register",
+                style: Styles.secondarySubtitleBold,
+              ),
+              onPressed: () => context.push('/register'),
             ),
-            onPressed: () => context.push('/register'),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -188,14 +190,6 @@ class _LoginScreenState extends State<LoginScreen> {
         onPressed: () {},
       ),
     );
-  }
-
-  Future<bool> _onWillPop() async {
-    FocusScope.of(context).unfocus(); // Dismiss keyboard
-    await Future.delayed(
-      const Duration(milliseconds: 100),
-    ); // Brief delay to ensure keyboard hides
-    return true; // Allow pop
   }
 
   @override

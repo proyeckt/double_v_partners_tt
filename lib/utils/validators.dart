@@ -1,6 +1,13 @@
 import 'package:double_v_partners_tt/extensions/string_extensions.dart';
 
 class Validators {
+  static String? validateRequiredField(String? value) {
+    if (value.isNullOrEmpty) {
+      return 'Required field';
+    }
+    return null;
+  }
+
   static String? validateEmail(String? value) {
     if (value.isNullOrEmpty) return 'Please enter your email';
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$');

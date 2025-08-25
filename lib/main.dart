@@ -1,5 +1,5 @@
-import 'package:double_v_partners_tt/presentation/screens/onboarding_screen.dart';
 import 'package:double_v_partners_tt/utils/colors.dart';
+import 'package:double_v_partners_tt/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Double V Partners Test',
       theme: ThemeData(
         primaryColor: AppColors.primaryColor,
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const OnboardingScreen(),
+      routerConfig: router,
     );
   }
 }

@@ -33,10 +33,7 @@ class LoginScreen extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {}, // Placeholder: No logic
-                  child: const Text('Login'),
-                ),
+                ElevatedButton(onPressed: () {}, child: const Text('Login')),
                 TextButton(
                   onPressed: () => Navigator.pushNamed(context, '/register'),
                   child: const Text('Need an account? Register'),

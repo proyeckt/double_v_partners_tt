@@ -69,10 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   obscureText: true,
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {}, // Placeholder: No logic
-                  child: const Text('Register'),
-                ),
+                ElevatedButton(onPressed: () {}, child: const Text('Register')),
                 TextButton(
                   onPressed: () => Navigator.pushNamed(context, '/login'),
                   child: const Text('Already registered? Login'),

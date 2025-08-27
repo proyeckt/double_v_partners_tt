@@ -1,7 +1,10 @@
+import 'package:double_v_partners_tt/domain/models/user_model.dart';
+import 'package:double_v_partners_tt/presentation/cubits/user_cubit.dart';
 import 'package:double_v_partners_tt/utils/colors.dart';
 import 'package:double_v_partners_tt/utils/styles.dart';
 import 'package:double_v_partners_tt/utils/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
@@ -32,8 +35,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
       canPop: false,
       onPopInvokedWithResult: _onPopInvokedWithResult,
       child: Scaffold(
-        body: Stack(
-          children: <Widget>[_buildBackground(context), _buildForm(context)],
+        body: BlocConsumer<UserCubit, UserState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              loaded: (user) => context.go('/home'),
+              error: (message) {
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text(message)));
+              },
+            );
+          },
+          builder: (context, state) {
+            return Stack(
+              children: <Widget>[
+                _buildBackground(context),
+                _buildForm(context, state),
+              ],
+            );
+          },
         ),
       ),
     );
@@ -60,7 +80,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  Widget _buildForm(BuildContext context) {
+  Widget _buildForm(BuildContext context, UserState state) {
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -101,7 +121,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       SizedBox(height: 10),
                       _buildBirthdate(),
                       SizedBox(height: 20),
-                      _buildButton(),
+                      state.maybeWhen(
+                        loading: () => const CircularProgressIndicator(),
+                        orElse: () => _buildButton(),
+                      ),
                     ],
                   ),
                 ),
@@ -217,8 +240,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           backgroundColor: Theme.of(context).primaryColor,
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
         ),
+        onPressed: _submit,
         child: Text('Sign up', style: Styles.mainButton),
-        onPressed: () {},
       ),
     );
   }
@@ -361,6 +384,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
       lastDate: DateTime.now(),
     );
     return picked;
+  }
+
+  void _submit() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    final cubit = context.read<UserCubit>();
+    FocusScope.of(context).unfocus();
+    User user = User(
+      firstName: _firstNameController.text,
+      lastName: _lastNameController.text,
+      email: _emailController.text,
+      password: _passwordController.text,
+      birthdate: _selectedDate!,
+    );
+    await cubit.register(user);
   }
 
   @override

@@ -21,6 +21,7 @@ mixin _$UserState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) =>
@@ -30,6 +31,7 @@ mixin _$UserState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) =>
@@ -39,6 +41,7 @@ mixin _$UserState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -49,6 +52,7 @@ mixin _$UserState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) =>
@@ -58,6 +62,7 @@ mixin _$UserState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) =>
@@ -67,6 +72,7 @@ mixin _$UserState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -138,6 +144,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) {
@@ -150,6 +157,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) {
@@ -162,6 +170,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -178,6 +187,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -190,6 +200,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -202,6 +213,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -261,6 +273,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) {
@@ -273,6 +286,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) {
@@ -285,6 +299,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -301,6 +316,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -313,6 +329,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -325,6 +342,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -423,6 +441,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) {
@@ -435,6 +454,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) {
@@ -447,6 +467,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -463,6 +484,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -475,6 +497,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -487,6 +510,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -507,6 +531,176 @@ abstract class _Loaded implements UserState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadedAllImplCopyWith<$Res> {
+  factory _$$LoadedAllImplCopyWith(
+          _$LoadedAllImpl value, $Res Function(_$LoadedAllImpl) then) =
+      __$$LoadedAllImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<User> users});
+}
+
+/// @nodoc
+class __$$LoadedAllImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$LoadedAllImpl>
+    implements _$$LoadedAllImplCopyWith<$Res> {
+  __$$LoadedAllImplCopyWithImpl(
+      _$LoadedAllImpl _value, $Res Function(_$LoadedAllImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? users = null,
+  }) {
+    return _then(_$LoadedAllImpl(
+      null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadedAllImpl implements _LoadedAll {
+  const _$LoadedAllImpl(final List<User> users) : _users = users;
+
+  final List<User> _users;
+  @override
+  List<User> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'UserState.loadedAll(users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedAllImpl &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedAllImplCopyWith<_$LoadedAllImpl> get copyWith =>
+      __$$LoadedAllImplCopyWithImpl<_$LoadedAllImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
+    required TResult Function(String message) error,
+    required TResult Function() unauthenticated,
+  }) {
+    return loadedAll(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
+    TResult? Function(String message)? error,
+    TResult? Function()? unauthenticated,
+  }) {
+    return loadedAll?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
+    TResult Function(String message)? error,
+    TResult Function()? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (loadedAll != null) {
+      return loadedAll(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+  }) {
+    return loadedAll(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Unauthenticated value)? unauthenticated,
+  }) {
+    return loadedAll?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
+    TResult Function(_Error value)? error,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (loadedAll != null) {
+      return loadedAll(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadedAll implements UserState {
+  const factory _LoadedAll(final List<User> users) = _$LoadedAllImpl;
+
+  List<User> get users;
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadedAllImplCopyWith<_$LoadedAllImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -581,6 +775,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) {
@@ -593,6 +788,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) {
@@ -605,6 +801,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -621,6 +818,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -633,6 +831,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -645,6 +844,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
@@ -712,6 +912,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(User user) loaded,
+    required TResult Function(List<User> users) loadedAll,
     required TResult Function(String message) error,
     required TResult Function() unauthenticated,
   }) {
@@ -724,6 +925,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(User user)? loaded,
+    TResult? Function(List<User> users)? loadedAll,
     TResult? Function(String message)? error,
     TResult? Function()? unauthenticated,
   }) {
@@ -736,6 +938,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(User user)? loaded,
+    TResult Function(List<User> users)? loadedAll,
     TResult Function(String message)? error,
     TResult Function()? unauthenticated,
     required TResult orElse(),
@@ -752,6 +955,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_Error value) error,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
@@ -764,6 +968,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_Error value)? error,
     TResult? Function(_Unauthenticated value)? unauthenticated,
   }) {
@@ -776,6 +981,7 @@ class _$UnauthenticatedImpl implements _Unauthenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_Error value)? error,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),

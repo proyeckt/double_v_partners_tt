@@ -11,6 +11,7 @@ class UserState with _$UserState {
   const factory UserState.initial() = _Initial;
   const factory UserState.loading() = _Loading;
   const factory UserState.loaded(User user) = _Loaded;
+  const factory UserState.loadedAll(List<User> users) = _LoadedAll;
   const factory UserState.error(String message) = _Error;
   const factory UserState.unauthenticated() = _Unauthenticated;
 }
@@ -75,5 +76,15 @@ class UserCubit extends Cubit<UserState> {
   User? get currentUser {
     final activeUser = _useCases.getActiveUser();
     return activeUser as User?;
+  }
+
+  Future<void> fetchAllUsers() async {
+    emit(const UserState.loading());
+    try {
+      final users = await _useCases.getAllUsers();
+      emit(UserState.loadedAll(users));
+    } catch (e) {
+      emit(UserState.error('Failed to fetch users: $e'));
+    }
   }
 }

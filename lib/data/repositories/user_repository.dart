@@ -9,6 +9,7 @@ abstract class UserRepository {
   Future<void> saveActiveUser(String email);
   Future<User?> getActiveUser();
   Future<void> clearActiveUser();
+  Future<List<User>> getAllUsers();
 }
 
 @LazySingleton(as: UserRepository)
@@ -40,7 +41,8 @@ class HiveUserRepository implements UserRepository {
     return null; // invalid credentials
   }
 
-  List<User> getAllUsers() {
+  @override
+  Future<List<User>> getAllUsers() async {
     return _usersBox.values.toList();
   }
 

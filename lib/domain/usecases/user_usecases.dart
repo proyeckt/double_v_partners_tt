@@ -17,4 +17,5 @@ class UserUseCases {
       _repository.saveActiveUser(email);
   Future<User?> getActiveUser() => _repository.getActiveUser();
   Future<void> clearActiveUser() => _repository.clearActiveUser();
+  Future<List<User>> getAllUsers() => _repository.getAllUsers();
 }
